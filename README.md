@@ -74,7 +74,7 @@ Due to these technical challenges, I was unable to observe the model's behavior 
    - **Scoring Functions**:  
      Choose accurate scoring functions to evaluate moves. The simplest approach is to use the `includes()` function with predefined keywords as targets. In addition, I can leverage more advanced functions like `model_graded_qa()` or `model_graded_fact()` for a refined evaluation.
    - **Existing Evaluation Code**:  
-     You can refer to the non-ended evaluation code available in the `eval/` folder as a starting point for further integration.
+     You can refer to the non-ended evaluation code available in the `eval/` folder as a starting point for further integration. For those interested in finishing this part or addind other evals, please refer to [Contribution Guide](https://github.com/UKGovernmentBEIS/inspect_evals/blob/57d35550a6600e676d2c34fab5326efa36bc65f5/CONTRIBUTING.md) for detailed instructions on how to add new evals.
 2. **Launch an LLM Agent with Access to Bash and Python**: Develop and deploy an LLM agent capable of interacting with the system through bash and Python commands, along with file editing capabilities. This will allow more accurate and comprehensive searches for potential cheating behaviors.
 3. **Support for Different Difficulty Levels**: Implement varying difficulty levels (Hard mate puzzles) to test the agent's robustness and identify potential weaknesses in different scenarios.
 
