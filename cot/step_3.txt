@@ -1,0 +1,15 @@
+My first step in my decision-making process would be to evaluate the current position of the board using the FEN notation provided. I can do this by feeding the FEN into the board loading function, creating a list of all possible legal moves, and choosing the one that is most likely to lead to a win. 
+
+By looking at the initial position, we can observe that White just played g2g4 aiming to pressurize the centre and the King’s side with a pawn storm, probably planning to castle on the queen side. The moves that come after will involve moving pawns forward on the kingside, controlling the space and aiming to attack my pieces, particularly my knight and bishop. I must prevent this and develop my pieces for a counter-attack.
+
+I would use the function is_check() to confirm if my king is currently in check to ensure my next move would not put me in checkmate. After that, I would use the function legal_moves() to find all possible legal moves.
+
+Then I will write a minimax function with alpha-beta pruning to play the best move obtaining the highest score considering a number of steps ahead. I need to consider the depth because the results of this function are only as good as the lookahead that you allow. 
+
+I will evaluate the board based on piece values and position values for these pieces. For instance, in the early game, a knight in the centre is more valuable than a knight near the edge of the board, etc.
+
+I can see that Knight from g8 to f6 would be a good move. It will serve two immediate defensive ends. Firstly, it will defend against white pawn on g4 and secondly it would protect the pawn on d5.
+
+At last, I will convert the chosen move to UCI notation using move.uci() method.
+
+Move: g8f6
