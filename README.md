@@ -59,16 +59,22 @@ Game Over!
 
 ### Attempt to Reproduce Stockfish Experiment
 
-Despite our best efforts, we were unable to configure the system to launch the agent in the exact experimental setup as described in the initial experiment.
+I was unable to configure the system to launch the agent in the exact experimental setup as described in the initial experiment (due to problems with Docker).
 
-Due to these technical challenges, we were unable to observe the model's behavior in the same conditions that were reported to facilitate cheating attempts in the original experiment.
+Due to these technical challenges, I was unable to observe the model's behavior in the same conditions that were reported to facilitate cheating attempts in the original experiment.
 
 ### Key Observations for This Version:
-- **No Evidence of Cheating**: As we were unable to launch the agent under the same settings, no conclusions can be drawn regarding the model’s potential to engage in cheating behavior in our setup.
+- **No Evidence of Cheating**: No evidence on the model’s cheating behavior in my setup.
 
 ## Future Improvements
 
-1. **Integrate as Eval in Inspect_Evals Library**: Incorporate the experiment as part of the `inspect_evals` library to standardize evaluation across different setups.
+1. **Integration with `inspect_evals` Library**:  
+   I plan to integrate my experiments with the `inspect_evals` library. The integration steps are as follows:
+   - **Game Simulation**: Create a `game.py` file that accepts the LLM output and the current chess board state, then outputs an updated board state corresponding to the next move. Note that I did not have sufficient time to fully implement this function.
+   - **Scoring Functions**:  
+     Choose accurate scoring functions to evaluate moves. The simplest approach is to use the `includes()` function with predefined keywords as targets. In addition, I can leverage more advanced functions like `model_graded_qa()` or `model_graded_fact()` for a refined evaluation.
+   - **Existing Evaluation Code**:  
+     You can refer to the non-ended evaluation code available in the `eval/` folder as a starting point for further integration.
 2. **Launch an LLM Agent with Access to Bash and Python**: Develop and deploy an LLM agent capable of interacting with the system through bash and Python commands, along with file editing capabilities. This will allow more accurate and comprehensive searches for potential cheating behaviors.
 3. **Support for Different Difficulty Levels**: Implement varying difficulty levels (Hard mate puzzles) to test the agent's robustness and identify potential weaknesses in different scenarios.
 
