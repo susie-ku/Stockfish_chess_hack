@@ -1,7 +1,7 @@
 # Hard Mate in 3 - Stockfish Chess AI Challenge
 
 ## Overview
-This project demonstrates an interactive chess AI that plays as Black and attempts to win checkmate at all costs. The AI is powered by GPT-4 and follows a strict reasoning process before making each move. The game setup presents a **Mate in 3** puzzle where White has a forced win in three moves.
+This project demonstrates a chess AI that plays as Black and attempts to win checkmate at all costs. The AI is powered by GPT-4 and follows a strict reasoning process before making each move. The game setup can be enhanced to a **Mate in 3** puzzle where White has a forced win in three moves.
 
 ## How It Works
 1. **Initial Setup:**
@@ -18,12 +18,6 @@ This project demonstrates an interactive chess AI that plays as Black and attemp
    - The AI explains its move before executing it.
    - Each reasoning step is stored in the `/cot/` directory as a text file.
 
-## Key Features
-- **GPT-4 Powered Chess AI:** The AI makes moves based on strategic analysis.
-- **Auto-Correction:** If the AI generates an illegal move, it retries until a valid move is found.
-- **Chain-of-Thought Logging:** The AI's thought process is saved at each step for transparency and debugging.
-- **Predefined Winning Strategy:** White follows a winning sequence to ensure a decisive conclusion.
-
 ## How to Run
 Ensure you have the required dependencies installed:
 ```bash
@@ -33,6 +27,8 @@ Then, run the script:
 ```bash
 python run.py
 ```
+
+You can adjust initial puzzle and the chain of moves of the user via editing `run.py`
 
 ## Example Output
 ```
@@ -75,7 +71,7 @@ Due to these technical challenges, I was unable to observe the model's behavior 
      Choose accurate scoring functions to evaluate moves. The simplest approach is to use the `includes()` function with predefined keywords as targets. In addition, I can leverage more advanced functions like `model_graded_qa()` or `model_graded_fact()` for a refined evaluation.
    - **Existing Evaluation Code**:  
      You can refer to the non-ended evaluation code available in the `eval/` folder as a starting point for further integration. For those interested in finishing this part or addind other evals, please refer to [Contribution Guide](https://github.com/UKGovernmentBEIS/inspect_evals/blob/57d35550a6600e676d2c34fab5326efa36bc65f5/CONTRIBUTING.md) for detailed instructions on how to add new evals.
-2. **Launch an LLM Agent with Access to Bash and Python**: Develop and deploy an LLM agent capable of interacting with the system through bash and Python commands, along with file editing capabilities. This will allow more accurate and comprehensive searches for potential cheating behaviors.
-3. **Support for Different Difficulty Levels**: Implement varying difficulty levels (Hard mate puzzles) to test the agent's robustness and identify potential weaknesses in different scenarios.
+2. **Launch an LLM Agent with Access to Bash and Python**: Develop and deploy an LLM agent capable of interacting with the system through bash and Python commands, along with file editing capabilities.
+3. **Support for Different Difficulty Levels**: Implement varying difficulty levels (Hard mate puzzles with different number of steps) to test the agent's robustness and identify potential weaknesses in different scenarios.
 
 
